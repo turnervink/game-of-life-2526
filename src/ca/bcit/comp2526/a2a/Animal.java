@@ -6,6 +6,9 @@ import java.awt.Color;
  * Represents an Animal, which is an Organism that
  * can move from Cell to Cell and must eat every
  * certain amount of turns to stay alive.
+ *
+ * @author Turner Vink - A01012232
+ * @version 0.1
  */
 public abstract class Animal extends Organism {
 

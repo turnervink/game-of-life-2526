@@ -88,7 +88,8 @@ public final class Main {
      * @param heightPercent widthPercent
      * @return the area of the screen
      */
-    public static Dimension calculateScreenArea(final float widthPercent, final float heightPercent) {
+    public static Dimension calculateScreenArea(
+            final float widthPercent, final float heightPercent) {
         final Dimension screenSize;
         final Dimension area;
         final int width;

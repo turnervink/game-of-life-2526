@@ -18,11 +18,11 @@ public class World {
     /* Number of rows in the World. */
     private int rows;
     /* The chance that a Cell will contain a Herbivore. */
-    private final int HERBIVORE_CHANCE = 80;
+    private final int herbivoreChance = 80;
     /* The chance that a Cell will contain a Plant. */
-    private final int PLANT_CHANCE = 50;
+    private final int plantChance = 50;
     /* 100%. */
-    private final int MAX_CHANCE = 100;
+    private final int maxChance = 100;
 
     /**
      * Creates a World.
@@ -46,10 +46,10 @@ public class World {
             for (int j = 0; j < columns; j++) {
                 grid[i][j] = new Cell(this, i, j);
 
-                int chance = RandomGenerator.nextNumber(MAX_CHANCE);
-                if (chance > HERBIVORE_CHANCE) {
+                int chance = RandomGenerator.nextNumber(maxChance);
+                if (chance > herbivoreChance) {
                     grid[i][j].setContents(new Herbivore(grid[i][j]));
-                } else if (chance > PLANT_CHANCE) {
+                } else if (chance > plantChance) {
                     grid[i][j].setContents(new Plant(grid[i][j]));
                 }
             }

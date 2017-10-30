@@ -130,7 +130,9 @@ public class Cell extends JPanel {
 
         for (int i = this.row - 1; i <= this.row + 1; i++) {
             for (int j = this.column - 1; j <= this.column + 1; j++) {
-                if (this.world.inWorld(i, j) && !(this.equals(world.getCellAt(i, j)))) {
+                if (this.world.inWorld(i, j)
+                        && !(this.equals(world.getCellAt(i, j)))) {
+
                     adjacent.add(world.getCellAt(i, j));
                 }
             }
