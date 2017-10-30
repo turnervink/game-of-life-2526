@@ -17,7 +17,7 @@ public abstract class Organism extends Holdable {
      * @param location the Cell where the Organism is located
      * @param color the Color the Cell containing the Organism should be
      */
-    public Organism(final Cell location, Color color) {
+    public Organism(final Cell location, final Color color) {
         super(location, color);
     }
 

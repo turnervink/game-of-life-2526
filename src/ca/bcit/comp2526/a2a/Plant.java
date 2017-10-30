@@ -22,7 +22,7 @@ public class Plant extends Organism implements HerbivoreEdible {
      *
      * @param location the Cell where the Plant is contained
      */
-    public Plant(Cell location) {
+    public Plant(final Cell location) {
         super(location, Colors.PLANT.getColor());
     }
 
@@ -66,7 +66,7 @@ public class Plant extends Organism implements HerbivoreEdible {
      *
      * @param candidate the Cell to seed
      */
-    private void seed(Cell candidate) {
+    private void seed(final Cell candidate) {
         candidate.setContents((new Plant(candidate)));
     }
 

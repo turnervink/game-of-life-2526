@@ -1,5 +1,9 @@
 package ca.bcit.comp2526.a2a;
 
+/**
+ * Random number generator for creating
+ * a World.
+ */
 public final class RandomGenerator {
     private static final int[] NUMBERS;
 

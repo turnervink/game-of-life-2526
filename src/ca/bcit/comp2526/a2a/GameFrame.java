@@ -42,7 +42,16 @@ public class GameFrame extends JFrame {
             }
         }
 
-        addMouseListener(new TurnListener(this));
+        addMouseListener(new MouseAdapter() {
+            /**
+             * Advances the GameFrame one turn when the mouse is clicked.
+             *
+             * @param e the MouseEvent that occurred
+             */
+            public void mouseClicked(final MouseEvent e) {
+                takeTurn();
+            }
+        });
     }
 
     /**
@@ -52,31 +61,5 @@ public class GameFrame extends JFrame {
     public void takeTurn() {
         world.takeTurn();
         repaint();
-    }
-
-    /**
-     * Listens for mouse clicks on the GameFrame.
-     */
-    private class TurnListener extends MouseAdapter {
-        /* The frame the listener is attached to. */
-        private GameFrame frame;
-
-        /**
-         * Creates a TurnListener.
-         *
-         * @param frame the GameFrame to attach to
-         */
-        public TurnListener(final GameFrame frame) {
-            this.frame = frame;
-        }
-
-        /**
-         * Advances the GameFrame one turn when the mouse is clicked.
-         *
-         * @param e the MouseEvent that occured
-         */
-        public void mouseClicked(MouseEvent e) {
-            frame.takeTurn();
-        }
     }
 }

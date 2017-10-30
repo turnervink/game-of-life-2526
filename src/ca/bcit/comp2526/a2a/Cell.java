@@ -115,9 +115,9 @@ public class Cell extends JPanel {
      *
      * @param g graphics context to draw on
      */
-    protected void paintComponent(Graphics g) {
+    protected void paintComponent(final Graphics g) {
         super.paintComponent(g);
-        g.drawString("" + row + ", " + column, 0, 10);
+//        g.drawString("" + row + ", " + column, 0, 10);
     }
 
     /**

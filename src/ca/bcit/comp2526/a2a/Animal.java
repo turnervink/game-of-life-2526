@@ -1,6 +1,6 @@
 package ca.bcit.comp2526.a2a;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
  * Represents an Animal, which is an Organism that
@@ -22,7 +22,7 @@ public abstract class Animal extends Organism {
      * @param maxHunger the number of turns the Animal can go
      *                      without eating
      */
-    public Animal(final Cell location, Color color, int maxHunger) {
+    public Animal(final Cell location, final Color color, int maxHunger) {
         super(location, color);
         this.maxHunger = maxHunger;
         this.remainingHunger = maxHunger;

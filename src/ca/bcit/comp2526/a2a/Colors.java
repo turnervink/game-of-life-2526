@@ -23,7 +23,7 @@ public enum Colors {
      *
      * @param color the colour for the Holdable type
      */
-    Colors(Color color) {
+    Colors(final Color color) {
         this.color = color;
     }
 

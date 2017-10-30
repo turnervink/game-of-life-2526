@@ -22,7 +22,7 @@ public abstract class Holdable {
      * @param location the Cell where the object is contained
      * @param color the Color of the object
      */
-    public Holdable(final Cell location, Color color) {
+    public Holdable(final Cell location, final Color color) {
         this.location = location;
         this.color = color;
     }
@@ -62,15 +62,6 @@ public abstract class Holdable {
     }
 
     /**
-     * Gets the designated color of the Holdable object.
-     *
-     * @return Color of the object
-     */
-    public Color getColor() {
-        return color;
-    }
-
-    /**
      * Checks to see if a Holdable object has
      * already taken its turn.
      *
@@ -82,7 +73,7 @@ public abstract class Holdable {
 
     /**
      * Sets whether a Holdable object has
-     * taken its turn
+     * taken its turn.
      *
      * @param actionTaken the state of actionTaken to set
      */

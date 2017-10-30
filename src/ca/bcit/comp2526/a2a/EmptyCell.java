@@ -23,9 +23,4 @@ public class EmptyCell extends Holdable {
     public void takeAction() {
         this.setActionTaken(true);
     }
-
-    @Override
-    public String toString() {
-        return "EmptyCell";
-    }
 }

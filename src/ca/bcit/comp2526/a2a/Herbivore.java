@@ -49,34 +49,34 @@ public class Herbivore extends Animal {
         if (this.hasStarved()) {
             this.die();
         } else {
-            ArrayList<Cell> candidates = new ArrayList<>();
+            ArrayList<Cell> candidateEmptyCells = new ArrayList<>();
+            ArrayList<Cell> candidateHerbivoreEdibles = new ArrayList<>();
+            Random rand = new Random();
 
             for (Cell cell : this.getLocation().getNeighbours()) {
                 Holdable contents = cell.getContents();
-                if (contents instanceof EmptyCell
-                    || contents instanceof HerbivoreEdible) {
-
-                    candidates.add(cell);
+                if (contents instanceof EmptyCell) {
+                    candidateEmptyCells.add(cell);
+                } else if (contents instanceof HerbivoreEdible) {
+                    candidateHerbivoreEdibles.add(cell);
                 }
             }
 
-            if (candidates.size() > 0) {
-                Random rand = new Random();
-                int choice = rand.nextInt(candidates.size());
+            // Prioritize a Plant over an EmptyCell
+            if (candidateHerbivoreEdibles.size() > 0) {
+                int choice = rand.nextInt(candidateHerbivoreEdibles.size());
 
-                Cell candidate = candidates.get(choice);
+                Cell candidate = candidateHerbivoreEdibles.get(choice);
 
-                if (candidate.getContents() instanceof HerbivoreEdible) {
-                    this.resetHunger();
-                }
+                this.move(candidate);
+                this.resetHunger(); // "Eat" after moving onto a Plant
+            } else if (candidateEmptyCells.size() > 0) {
+                int choice = rand.nextInt(candidateEmptyCells.size());
+
+                Cell candidate = candidateEmptyCells.get(choice);
 
                 this.move(candidate);
             }
         }
-    }
-
-    @Override
-    public String toString() {
-        return "Herbivore";
     }
 }
