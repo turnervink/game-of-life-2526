@@ -17,6 +17,8 @@ public class World {
     private int columns;
     /* Number of rows in the World. */
     private int rows;
+    /* Number of turns taken. */
+    private int turns;
     /* The chance that a Cell will contain a Herbivore. */
     private final int herbivoreChance = 80;
     /* The chance that a Cell will contain a Plant. */
@@ -34,6 +36,7 @@ public class World {
         this.rows = rows;
         this.columns = columns;
         this.grid = new Cell[rows][columns];
+        this.turns = 0;
     }
 
     /**
@@ -92,6 +95,10 @@ public class World {
         return grid[row][column];
     }
 
+    public int getTurns() {
+        return turns;
+    }
+
     /**
      * Checks to see if a row/column coordinate
      * is within the bounds of the World.
@@ -112,6 +119,8 @@ public class World {
      * specified action.
      */
     public void takeTurn() {
+        this.turns++;
+
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (!grid[i][j].getContents().isActionTaken()) {

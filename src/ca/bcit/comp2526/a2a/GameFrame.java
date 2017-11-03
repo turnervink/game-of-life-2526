@@ -3,7 +3,7 @@ package ca.bcit.comp2526.a2a;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 /**
  * A JFrame containing a World filled with Cells.
@@ -32,7 +32,7 @@ public class GameFrame extends JFrame {
      * Cells from the World.
      */
     public void init() {
-        setTitle("Assignment 2a");
+        setTitle("Assignment 2a - Turn " + world.getTurns());
         setLayout(new GridLayout(world.getRowCount(), world.getColumnCount()));
 
         for (int row = 0; row < world.getRowCount(); row++) {
@@ -60,6 +60,7 @@ public class GameFrame extends JFrame {
      */
     public void takeTurn() {
         world.takeTurn();
+        setTitle("Assignment 2a - Turn " + world.getTurns());
         repaint();
     }
 }
