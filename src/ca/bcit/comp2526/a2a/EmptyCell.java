@@ -23,4 +23,8 @@ public class EmptyCell extends Holdable {
     public void takeAction() {
         this.setActionTaken(true);
     }
+
+    public boolean visit(Holdable visitor) {
+        return true;
+    }
 }

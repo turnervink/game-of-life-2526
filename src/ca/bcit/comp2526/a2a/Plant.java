@@ -26,6 +26,14 @@ public class Plant extends Organism implements HerbivoreEdible {
         super(location, Colors.PLANT.getColor());
     }
 
+    public boolean visit(Holdable visitor) {
+        return false;
+    }
+
+    public boolean visit(Herbivore visitor) {
+        return true;
+    }
+
     /**
      * Finds candidate Cells that the Plant can seed.
      * A Plant will only seed a neighbouring Cell if there are

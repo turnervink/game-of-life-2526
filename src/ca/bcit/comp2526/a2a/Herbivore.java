@@ -35,6 +35,10 @@ public class Herbivore extends Animal {
         this.setCell(dest);
     }
 
+    public boolean visit(Holdable visitor) {
+        return false;
+    }
+
     /**
      * Finds candidate neighbouring Cells for the Herbivore
      * to move into. If multiple candidates are found, one is
@@ -55,10 +59,14 @@ public class Herbivore extends Animal {
 
             for (Cell cell : this.getLocation().getNeighbours()) {
                 Holdable contents = cell.getContents();
-                if (contents instanceof EmptyCell) {
-                    candidateEmptyCells.add(cell);
-                } else if (contents instanceof HerbivoreEdible) {
-                    candidateHerbivoreEdibles.add(cell);
+//                if (contents instanceof EmptyCell) {
+//                    candidateEmptyCells.add(cell);
+//                } else if (contents instanceof HerbivoreEdible) {
+//                    candidateHerbivoreEdibles.add(cell);
+//                }
+
+                if (contents.visit(this)) {
+                    System.out.println("visitable by herbivore");
                 }
             }
 

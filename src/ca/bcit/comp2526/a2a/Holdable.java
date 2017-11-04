@@ -8,7 +8,7 @@ import java.awt.Color;
  * @author Turner Vink - A01012232
  * @version 0.1
  */
-public abstract class Holdable {
+public abstract class Holdable implements Visitable {
     /* The Cell the Holdable is contained in. */
     private Cell location;
     /* The Color the Holdable is displayed in. */
